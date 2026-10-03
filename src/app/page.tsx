@@ -43,6 +43,8 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+/* ---------------------------------- data ---------------------------------- */
+
 const ROLES = [
   "Full Stack Developer",
   "Data Scientist",
@@ -60,31 +62,86 @@ const SKILLS = [
 ];
 
 const EDUCATION = [
-  { period: "2025 — Present", title: "PGD in Data Science", place: "NED University of Engineering & Technology", desc: "Post Graduate Diploma — advanced machine learning, big data & analytics.", current: true },
-  { period: "2020 — 2024", title: "BS Software Engineering", place: "Sir Syed University of Engineering & Technology", desc: "Graduated with a focus on full stack development, databases & software design.", current: false },
-  { period: "2018 — 2020", title: "Intermediate — Pre-Engineering", place: "Iqra Huffaz Boys College", desc: "Mathematics, Physics & Chemistry foundation.", current: false },
-  { period: "2016 — 2018", title: "Matric — Bio Science", place: "Mama Baby Care School", desc: "Science group with biology.", current: false },
+  {
+    period: "2025 — Present",
+    title: "PGD in Data Science",
+    place: "NED University of Engineering & Technology",
+    desc: "Post Graduate Diploma — advanced machine learning, big data & analytics.",
+    current: true,
+  },
+  {
+    period: "2020 — 2024",
+    title: "BS Software Engineering",
+    place: "Sir Syed University of Engineering & Technology",
+    desc: "Graduated with a focus on full stack development, databases & software design.",
+    current: false,
+  },
+  {
+    period: "2018 — 2020",
+    title: "Intermediate — Pre-Engineering",
+    place: "Iqra Huffaz Boys College",
+    desc: "Mathematics, Physics & Chemistry foundation.",
+    current: false,
+  },
+  {
+    period: "2016 — 2018",
+    title: "Matric — Bio Science",
+    place: "Mama Baby Care School",
+    desc: "Science group with biology.",
+    current: false,
+  },
 ];
 
-const PROJECT = {
-  title: "Shery Cafe — Website & Business Platform",
-  tagline: "Full stack cafe & lounge platform — live in production",
-  link: "https://shery-cafe.vercel.app",
-  stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
-  features: [
-    "Online menu with cart & WhatsApp ordering",
-    "Table reservations & party bookings",
-    "Live order tracking for customers",
-    "Admin dashboard with sales analytics",
-    "Spin & Win, loyalty rewards & gift cards",
-    "Happy Hours with time-locked promo codes",
-  ],
-};
+const PROJECTS = [
+  {
+    title: "Shery Cafe — Website & Business Platform",
+    tagline: "Full stack cafe & lounge platform — live in production",
+    link: "https://shery-cafe.vercel.app",
+    linkLabel: "Visit Live Site",
+    badge: "Flagship Project",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    features: [
+      "Online menu with cart & WhatsApp ordering",
+      "Table reservations & party bookings",
+      "Live order tracking for customers",
+      "Admin dashboard with sales analytics",
+      "Spin & Win, loyalty rewards & gift cards",
+      "Happy Hours with time-locked promo codes",
+    ],
+  },
+  {
+    title: "Face Mask Detection — AI Web App",
+    tagline: "Deep learning CNN model with 98.99% accuracy — live in production",
+    link: "https://face-mask-detection-iumysnykxrf6auqnvn2xxt.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / Deep Learning",
+    stack: ["Python", "TensorFlow", "OpenCV", "CNN", "Streamlit"],
+    features: [
+      "CNN trained on 12,000 images using Google Colab GPU",
+      "98.99% test accuracy on unseen data",
+      "Real-time webcam detection with DNN face detector",
+      "Web app: upload a photo for instant mask prediction",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
+];
 
 const POSTS = [
-  { date: "Oct 2026", title: "How I Built a Full Stack Cafe Website Solo", desc: "Next.js, Prisma & Neon — from zero to a live production site serving a real business." },
-  { date: "Sep 2026", title: "From Software Engineering to Data Science", desc: "Why I chose a PGD in Data Science at NED and how it connects to my dev journey." },
-  { date: "Aug 2026", title: "Power BI Dashboards That People Actually Use", desc: "Lessons from building dashboards — clarity beats complexity, every time." },
+  {
+    date: "Oct 2026",
+    title: "How I Built a Full Stack Cafe Website Solo",
+    desc: "Next.js, Prisma & Neon — from zero to a live production site serving a real business.",
+  },
+  {
+    date: "Sep 2026",
+    title: "From Software Engineering to Data Science",
+    desc: "Why I chose a PGD in Data Science at NED and how it connects to my dev journey.",
+  },
+  {
+    date: "Aug 2026",
+    title: "Power BI Dashboards That People Actually Use",
+    desc: "Lessons from building dashboards — clarity beats complexity, every time.",
+  },
 ];
 
 const SOCIALS = [
@@ -234,7 +291,7 @@ export default function Portfolio() {
           <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
             I&apos;m <span className="font-bold text-white">Engineer Muhammad Shehryar Khan</span>,
             a software engineer turned data scientist based in Karachi, Pakistan. My journey
-            started with a BS in Software Engineering, and I&apos;m pursuing a{" "}
+            started with a BS in Software Engineering, and today I&apos;m pursuing a{" "}
             <span className="font-semibold text-amber-400">Post Graduate Diploma in Data Science</span>{" "}
             at NED University — while running my own business.
           </p>
@@ -295,32 +352,36 @@ export default function Portfolio() {
 
       <section id="work" className="border-y border-white/5 bg-white/[0.015]">
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-          <SectionHead kicker="Featured Project" title="My Work" desc="A real product, live in production, serving real customers every day." />
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass overflow-hidden">
-            <div className="grid lg:grid-cols-2">
-              <div className="relative min-h-72 bg-gradient-to-br from-amber-500/20 via-[#0a0a0f] to-[#0a0a0f] p-8 sm:p-10">
-                <span className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-black"><Briefcase className="h-3.5 w-3.5" /> Flagship Project</span>
-                <h3 className="mt-5 text-2xl font-extrabold sm:text-3xl">{PROJECT.title}</h3>
-                <p className="mt-2 text-sm text-zinc-400">{PROJECT.tagline}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {PROJECT.stack.map((t) => (
-                    <span key={t} className="rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">{t}</span>
-                  ))}
+          <SectionHead kicker="Featured Projects" title="My Work" desc="Real products, live in production — a web platform and an AI application." />
+          <div className="space-y-8">
+            {PROJECTS.map((project) => (
+              <motion.div key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass overflow-hidden">
+                <div className="grid lg:grid-cols-2">
+                  <div className="relative min-h-72 bg-gradient-to-br from-amber-500/20 via-[#0a0a0f] to-[#0a0a0f] p-8 sm:p-10">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-black"><Briefcase className="h-3.5 w-3.5" /> {project.badge}</span>
+                    <h3 className="mt-5 text-2xl font-extrabold sm:text-3xl">{project.title}</h3>
+                    <p className="mt-2 text-sm text-zinc-400">{project.tagline}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.stack.map((t) => (
+                        <span key={t} className="rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">{t}</span>
+                      ))}
+                    </div>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
+                      {project.linkLabel} <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </div>
+                  <div className="p-8 sm:p-10">
+                    <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">What I built</p>
+                    <ul className="mt-4 space-y-3">
+                      {project.features.map((f) => (
+                        <li key={f} className="flex items-start gap-3 text-sm text-zinc-300"><Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" /> {f}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <a href={PROJECT.link} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
-                  Visit Live Site <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="p-8 sm:p-10">
-                <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">What I built</p>
-                <ul className="mt-4 space-y-3">
-                  {PROJECT.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm text-zinc-300"><Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" /> {f}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
