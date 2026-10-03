@@ -176,7 +176,7 @@ export default function Portfolio() {
               <Sparkles className="h-3.5 w-3.5" /> Welcome to my portfolio
             </p>
             <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-              Hi, I'm <br /><span className="gold-text">Muhammad Shehryar Khan</span>
+              Hi, I&apos;m <br /><span className="gold-text">Muhammad Shehryar Khan</span>
             </h1>
             <p className="mt-4 h-8 text-xl font-semibold text-zinc-300">{typed}<span className="cursor-blink text-amber-400">|</span></p>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-zinc-400 sm:text-base">
@@ -232,9 +232,9 @@ export default function Portfolio() {
         <SectionHead kicker="About Me" title="Engineer, Developer & Entrepreneur" />
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass mx-auto max-w-3xl p-8 sm:p-10">
           <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-            I'm <span className="font-bold text-white">Engineer Muhammad Shehryar Khan</span>,
+            I&apos;m <span className="font-bold text-white">Engineer Muhammad Shehryar Khan</span>,
             a software engineer turned data scientist based in Karachi, Pakistan. My journey
-            started with a BS in Software Engineering, and today I'm pursuing a{" "}
+            started with a BS in Software Engineering, and I&apos;m pursuing a{" "}
             <span className="font-semibold text-amber-400">Post Graduate Diploma in Data Science</span>{" "}
             at NED University — while running my own business.
           </p>
