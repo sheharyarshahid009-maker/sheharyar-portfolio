@@ -153,6 +153,21 @@ const PROJECTS = [
       "Custom JSON theme for a polished dark look",
     ],
   },
+  {
+    title: "ChurnScope AI — Customer Churn Prediction",
+    tagline: "ML model predicting which customers will leave — live in production",
+    link: "https://churn-prediction-ai-htcto2txzxvlqyj4owf8aw.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / Machine Learning",
+    stack: ["Python", "scikit-learn", "Random Forest", "pandas", "Streamlit"],
+    features: [
+      "Random Forest trained on 5,000 telecom customers",
+      "71% accuracy with feature importance insights",
+      "Interactive form: predict churn risk instantly",
+      "Dark-gold UI matching portfolio branding",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
 ];
 
 const POSTS = [
