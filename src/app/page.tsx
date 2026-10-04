@@ -138,6 +138,21 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "E-commerce Sales Dashboard — Power BI",
+    tagline: "Interactive sales analytics — 3,000 orders across Pakistan",
+    link: "",
+    linkLabel: "",
+    badge: "Data Analytics",
+    stack: ["Power BI", "DAX", "Power Query", "Data Modeling"],
+    features: [
+      "5 KPI cards: sales, profit, orders, margin & avg order value",
+      "Sales trends with year → quarter → month drill-down",
+      "Category, city & segment breakdowns with interactive slicers",
+      "5 custom DAX measures (SUM, COUNTROWS, DIVIDE)",
+      "Custom JSON theme for a polished dark look",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -425,7 +440,7 @@ export default function Portfolio() {
       {/* Work */}
       <section id="work" className="border-y border-white/5 bg-white/[0.015]">
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-          <SectionHead kicker="Featured Projects" title="My Work" desc="Real products, live in production — a web platform and an AI application." />
+          <SectionHead kicker="Featured Projects" title="My Work" desc="Real products, live in production — web platforms, AI applications and data dashboards." />
           <div className="space-y-8">
             {PROJECTS.map((project) => (
               <motion.div key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass overflow-hidden">
@@ -441,9 +456,11 @@ export default function Portfolio() {
                         <span key={t} className="rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">{t}</span>
                       ))}
                     </div>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
-                      {project.linkLabel} <ExternalLink className="h-4 w-4" />
-                    </a>
+                    {project.link && (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
+                        {project.linkLabel} <ExternalLink className="h-4 w-4" />
+                      </a>
+                    )}
                   </div>
                   <div className="p-8 sm:p-10">
                     <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">What I built</p>
