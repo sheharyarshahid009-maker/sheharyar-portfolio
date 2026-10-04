@@ -168,6 +168,21 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "Shery AI — AI Chatbot",
+    tagline: "Personal AI assistant with premium 3D UI — live in production",
+    link: "https://shery-ai-k2xsgbzfzsnswuzyhzso7v.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / LLM",
+    stack: ["Python", "Groq", "Llama", "Streamlit", "LLM"],
+    features: [
+      "Lightning-fast AI chat powered by Groq",
+      "Auto model fallback for reliability",
+      "Premium 3D dark-gold UI with animations",
+      "Chat history, streaming replies & suggestion chips",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
 ];
 
 const POSTS = [
