@@ -124,6 +124,20 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "YOLO Vision AI — Object Detection",
+    tagline: "Real-time object detection web app — 80 classes, live in production",
+    link: "https://44jtbcb9zsvvrucb94utyi.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / Computer Vision",
+    stack: ["Python", "YOLOv8", "Ultralytics", "OpenCV", "Streamlit"],
+    features: [
+      "Real-time detection across 80 object classes",
+      "Photo upload with instant annotated results",
+      "Stylish dark-neon UI with detection chips",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -160,10 +174,13 @@ const NAV = [
   { href: "#contact", label: "Contact" },
 ];
 
+/* ------------------------------- typing hook ------------------------------ */
+
 function useTypewriter(words: string[]) {
   const [text, setText] = useState("");
   const [wi, setWi] = useState(0);
   const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
     const word = words[wi % words.length];
     const speed = deleting ? 40 : 80;
@@ -179,12 +196,21 @@ function useTypewriter(words: string[]) {
     }, speed);
     return () => clearTimeout(t);
   }, [text, deleting, wi, words]);
+
   return text;
 }
 
+/* --------------------------------- section -------------------------------- */
+
 function SectionHead({ kicker, title, desc }: { kicker: string; title: string; desc?: string }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="mb-10 text-center"
+    >
       <p className="text-xs font-bold uppercase tracking-[0.25em] text-amber-500">{kicker}</p>
       <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">{title}</h2>
       {desc && <p className="mx-auto mt-3 max-w-2xl text-sm text-zinc-400">{desc}</p>}
@@ -192,26 +218,37 @@ function SectionHead({ kicker, title, desc }: { kicker: string; title: string; d
   );
 }
 
+/* ---------------------------------- page ---------------------------------- */
+
 export default function Portfolio() {
   const typed = useTypewriter(ROLES);
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState("");
+
   const copy = (val: string, key: string) => {
     navigator.clipboard.writeText(val);
     setCopied(key);
     setTimeout(() => setCopied(""), 2000);
   };
+
   return (
     <div className="min-h-screen overflow-x-clip bg-[#0a0a0f]">
+      {/* Navbar */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#0a0a0f]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <a href="#top" className="text-lg font-extrabold tracking-tight">MSK<span className="gold-text">.</span></a>
+          <a href="#top" className="text-lg font-extrabold tracking-tight">
+            MSK<span className="gold-text">.</span>
+          </a>
           <nav className="hidden items-center gap-1 md:flex">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} className="rounded-lg px-3.5 py-2 text-sm font-medium text-zinc-400 transition hover:bg-white/5 hover:text-white">{n.label}</a>
+              <a key={n.href} href={n.href} className="rounded-lg px-3.5 py-2 text-sm font-medium text-zinc-400 transition hover:bg-white/5 hover:text-white">
+                {n.label}
+              </a>
             ))}
           </nav>
-          <a href="#contact" className="hidden rounded-xl bg-amber-500 px-4 py-2 text-sm font-bold text-black transition hover:bg-amber-400 md:block">Hire Me</a>
+          <a href="#contact" className="hidden rounded-xl bg-amber-500 px-4 py-2 text-sm font-bold text-black transition hover:bg-amber-400 md:block">
+            Hire Me
+          </a>
           <button className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 md:hidden" onClick={() => setMenuOpen((v) => !v)} aria-label="Menu">
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -219,12 +256,15 @@ export default function Portfolio() {
         {menuOpen && (
           <nav className="border-t border-white/5 px-4 py-3 md:hidden">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 hover:bg-white/5">{n.label}</a>
+              <a key={n.href} href={n.href} onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 hover:bg-white/5">
+                {n.label}
+              </a>
             ))}
           </nav>
         )}
       </header>
 
+      {/* Hero */}
       <section id="top" className="bg-grid relative flex min-h-screen items-center pt-16">
         <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-500/10 blur-3xl" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
@@ -233,9 +273,12 @@ export default function Portfolio() {
               <Sparkles className="h-3.5 w-3.5" /> Welcome to my portfolio
             </p>
             <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-              Hi, I&apos;m <br /><span className="gold-text">Muhammad Shehryar Khan</span>
+              Hi, I&apos;m <br />
+              <span className="gold-text">Muhammad Shehryar Khan</span>
             </h1>
-            <p className="mt-4 h-8 text-xl font-semibold text-zinc-300">{typed}<span className="cursor-blink text-amber-400">|</span></p>
+            <p className="mt-4 h-8 text-xl font-semibold text-zinc-300">
+              {typed}<span className="cursor-blink text-amber-400">|</span>
+            </p>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-zinc-400 sm:text-base">
               Engineer by degree, builder by passion. I craft full stack web apps,
               machine learning models and data dashboards — and I run{" "}
@@ -243,21 +286,31 @@ export default function Portfolio() {
               & lounge in Karachi, with its entire digital platform built by me.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#work" className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">View My Work</a>
-              <a href="#contact" className="rounded-xl border border-white/15 px-6 py-3 text-sm font-bold text-zinc-200 transition hover:border-amber-500/50 hover:text-amber-400">Get In Touch</a>
+              <a href="#work" className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
+                View My Work
+              </a>
+              <a href="#contact" className="rounded-xl border border-white/15 px-6 py-3 text-sm font-bold text-zinc-200 transition hover:border-amber-500/50 hover:text-amber-400">
+                Get In Touch
+              </a>
             </div>
             <div className="mt-8 flex gap-3">
               {SOCIALS.map((s) => {
                 const Icon = s.icon;
                 return (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition hover:border-amber-500/50 hover:text-amber-400">
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition hover:border-amber-500/50 hover:text-amber-400">
                     <Icon className="h-4 w-4" />
                   </a>
                 );
               })}
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} className="relative mx-auto w-72 sm:w-80 lg:w-96">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="relative mx-auto w-72 sm:w-80 lg:w-96"
+          >
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-amber-500/30 via-transparent to-amber-500/10 blur-2xl" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-amber-500/30">
               <Image src="/profile.jpg" alt="Engineer Muhammad Shehryar Khan" fill className="object-cover" priority sizes="400px" />
@@ -265,7 +318,10 @@ export default function Portfolio() {
             </div>
             <div className="glass absolute -bottom-5 -left-5 flex items-center gap-3 px-4 py-3">
               <span className="grid h-10 w-10 place-items-center rounded-full bg-amber-500"><Coffee className="h-5 w-5 text-black" /></span>
-              <div><p className="text-sm font-bold">Founder & CEO</p><p className="text-xs text-zinc-400">Shery Cafe, Karachi</p></div>
+              <div>
+                <p className="text-sm font-bold">Founder & CEO</p>
+                <p className="text-xs text-zinc-400">Shery Cafe, Karachi</p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -274,9 +330,15 @@ export default function Portfolio() {
         </a>
       </section>
 
+      {/* Stats */}
       <section className="border-y border-white/5 bg-white/[0.015]">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 sm:px-6 md:grid-cols-4">
-          {[{ n: "6+", l: "Core Skills" }, { n: "4", l: "Degrees & Diplomas" }, { n: "1", l: "Business Founded" }, { n: "15+", l: "Site Features Shipped" }].map((s, i) => (
+          {[
+            { n: "6+", l: "Core Skills" },
+            { n: "4", l: "Degrees & Diplomas" },
+            { n: "1", l: "Business Founded" },
+            { n: "15+", l: "Site Features Shipped" },
+          ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
               <p className="gold-text text-4xl font-extrabold">{s.n}</p>
               <p className="mt-1 text-xs font-medium uppercase tracking-widest text-zinc-500">{s.l}</p>
@@ -285,6 +347,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* About */}
       <section id="about" className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
         <SectionHead kicker="About Me" title="Engineer, Developer & Entrepreneur" />
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass mx-auto max-w-3xl p-8 sm:p-10">
@@ -310,6 +373,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
+      {/* Skills */}
       <section id="skills" className="border-y border-white/5 bg-white/[0.015]">
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
           <SectionHead kicker="What I Do" title="Skills & Expertise" desc="A blend of software engineering, data science and product thinking." />
@@ -319,8 +383,13 @@ export default function Portfolio() {
               return (
                 <motion.div key={s.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.1 }} className="glass group p-6 transition hover:border-amber-500/30">
                   <div className="flex items-center gap-4">
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-amber-500/15 text-amber-400 transition group-hover:bg-amber-500 group-hover:text-black"><Icon className="h-6 w-6" /></span>
-                    <div><p className="font-bold">{s.name}</p><p className="text-xs text-zinc-500">{s.desc}</p></div>
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-amber-500/15 text-amber-400 transition group-hover:bg-amber-500 group-hover:text-black">
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <div>
+                      <p className="font-bold">{s.name}</p>
+                      <p className="text-xs text-zinc-500">{s.desc}</p>
+                    </div>
                   </div>
                   <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/5">
                     <motion.div initial={{ width: 0 }} whileInView={{ width: `${s.level}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }} className="h-full rounded-full bg-gradient-to-r from-amber-600 to-amber-400" />
@@ -333,6 +402,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Education */}
       <section id="education" className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
         <SectionHead kicker="Journey" title="Education" />
         <div className="relative ml-3 space-y-8 border-l-2 border-white/10 pl-8">
@@ -342,7 +412,9 @@ export default function Portfolio() {
                 {e.current && <span className="h-2 w-2 animate-pulse rounded-full bg-amber-400" />}
               </span>
               <p className="text-xs font-bold uppercase tracking-widest text-amber-500">{e.period}{e.current && " · Ongoing"}</p>
-              <h3 className="mt-1 flex items-center gap-2 text-lg font-bold"><GraduationCap className="h-5 w-5 text-amber-400" /> {e.title}</h3>
+              <h3 className="mt-1 flex items-center gap-2 text-lg font-bold">
+                <GraduationCap className="h-5 w-5 text-amber-400" /> {e.title}
+              </h3>
               <p className="text-sm font-medium text-zinc-300">{e.place}</p>
               <p className="mt-1 text-sm text-zinc-500">{e.desc}</p>
             </motion.div>
@@ -350,6 +422,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Work */}
       <section id="work" className="border-y border-white/5 bg-white/[0.015]">
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
           <SectionHead kicker="Featured Projects" title="My Work" desc="Real products, live in production — a web platform and an AI application." />
@@ -358,7 +431,9 @@ export default function Portfolio() {
               <motion.div key={project.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass overflow-hidden">
                 <div className="grid lg:grid-cols-2">
                   <div className="relative min-h-72 bg-gradient-to-br from-amber-500/20 via-[#0a0a0f] to-[#0a0a0f] p-8 sm:p-10">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-black"><Briefcase className="h-3.5 w-3.5" /> {project.badge}</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-3.5 py-1.5 text-xs font-bold text-black">
+                      <Briefcase className="h-3.5 w-3.5" /> {project.badge}
+                    </span>
                     <h3 className="mt-5 text-2xl font-extrabold sm:text-3xl">{project.title}</h3>
                     <p className="mt-2 text-sm text-zinc-400">{project.tagline}</p>
                     <div className="mt-5 flex flex-wrap gap-2">
@@ -374,7 +449,9 @@ export default function Portfolio() {
                     <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">What I built</p>
                     <ul className="mt-4 space-y-3">
                       {project.features.map((f) => (
-                        <li key={f} className="flex items-start gap-3 text-sm text-zinc-300"><Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" /> {f}</li>
+                        <li key={f} className="flex items-start gap-3 text-sm text-zinc-300">
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" /> {f}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -385,6 +462,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Blog */}
       <section id="blog" className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
         <SectionHead kicker="Thoughts" title="Blog" desc="Notes on building, data and business." />
         <div className="grid gap-5 md:grid-cols-3">
@@ -399,6 +477,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Contact */}
       <section id="contact" className="border-t border-white/5 bg-white/[0.015]">
         <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6">
           <SectionHead kicker="Get In Touch" title="Let's Work Together" desc="Have a project in mind? My inbox is always open." />
@@ -416,13 +495,18 @@ export default function Portfolio() {
                     <span className="block text-xs uppercase tracking-widest text-zinc-500">{c.label}</span>
                     <span className="block text-sm font-semibold">{c.value}</span>
                   </span>
-                  <button onClick={(e) => { e.preventDefault(); copy(c.value, c.label); }} className="text-zinc-500 transition hover:text-amber-400" aria-label={`Copy ${c.label}`}>
+                  <button
+                    onClick={(e) => { e.preventDefault(); copy(c.value, c.label); }}
+                    className="text-zinc-500 transition hover:text-amber-400" aria-label={`Copy ${c.label}`}
+                  >
                     {copied === c.label ? <Check className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4" />}
                   </button>
                 </>
               );
               return c.href ? (
-                <a key={c.label} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition hover:border-amber-500/30">{inner}</a>
+                <a key={c.label} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4 transition hover:border-amber-500/30">
+                  {inner}
+                </a>
               ) : (
                 <div key={c.label} className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-4">{inner}</div>
               );
@@ -431,7 +515,8 @@ export default function Portfolio() {
               {SOCIALS.map((s) => {
                 const Icon = s.icon;
                 return (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition hover:border-amber-500/50 hover:text-amber-400">
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                    className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition hover:border-amber-500/50 hover:text-amber-400">
                     <Icon className="h-5 w-5" />
                   </a>
                 );
@@ -441,6 +526,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-white/5 py-8 text-center">
         <p className="text-sm text-zinc-500">© {new Date().getFullYear()} <span className="font-bold text-zinc-300">Engineer Muhammad Shehryar Khan</span></p>
         <p className="mt-1 text-xs text-zinc-600">Built with Next.js, TypeScript & Tailwind CSS</p>
