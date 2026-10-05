@@ -198,6 +198,22 @@ const PROJECTS = [
       "One-click WhatsApp alerts for fees & absences",
     ],
   },
+  {
+    title: "HireScope AI — AI Resume Screener",
+    tagline: "AI-powered resume screening for HR teams — live in production",
+    link: "https://hirescope-ai-kctjt8j44gbytjt5t2gdev.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / LLM",
+    stack: ["Python", "Groq", "Llama", "pdfplumber", "Streamlit"],
+    features: [
+      "Upload multiple CVs (PDF) with instant text extraction",
+      "Groq-powered AI scoring — 0–100 match score per candidate",
+      "Ranked results with matched/missing skill pills",
+      "Strengths & concerns summary for every candidate",
+      "Dark-amber UI with top-match badge & score bars",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -396,7 +412,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "7", l: "Live Projects" },
+            { n: "8", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
