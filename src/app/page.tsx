@@ -7,7 +7,7 @@ import {
   Phone, MapPin, Mail,
   ChevronDown, ExternalLink, Code2, Brain, BarChart3, Globe,
   GraduationCap, Briefcase, PenLine, Copy, Check, Menu, X,
-  Coffee, Sparkles, Database, Cpu,
+  Sparkles, Database, Cpu,
 } from "lucide-react";
 
 /* Brand icons (lucide ne remove kar diye — inline SVG) */
@@ -49,7 +49,6 @@ const ROLES = [
   "Full Stack Developer",
   "Data Scientist",
   "Machine Learning Engineer",
-  "Founder — Shery Cafe",
 ];
 
 const SKILLS = [
@@ -181,6 +180,22 @@ const PROJECTS = [
       "Premium 3D dark-gold UI with animations",
       "Chat history, streaming replies & suggestion chips",
       "Deployed live on Streamlit Cloud",
+    ],
+  },
+  {
+    title: "School ERP — Complete School Management System",
+    tagline: "Multi-branch school ERP with 20+ modules — live in production",
+    link: "https://school-erp-liard.vercel.app",
+    linkLabel: "Try Live Demo",
+    badge: "Full Stack SaaS",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    features: [
+      "Students, fees, attendance, exams, staff & salary management",
+      "Multi-branch support with instant branch switcher",
+      "Public online admission form & result check portal",
+      "Printable report cards, student ID cards & fee vouchers",
+      "Library, transport, homework diary, events & certificates",
+      "One-click WhatsApp alerts for fees & absences",
     ],
   },
 ];
@@ -326,9 +341,9 @@ export default function Portfolio() {
             </p>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-zinc-400 sm:text-base">
               Engineer by degree, builder by passion. I craft full stack web apps,
-              machine learning models and data dashboards — and I run{" "}
-              <span className="font-semibold text-zinc-200">Shery Cafe</span>, a cafe
-              & lounge in Karachi, with its entire digital platform built by me.
+              machine learning models and data dashboards — including the complete
+              digital platform for <span className="font-semibold text-zinc-200">Shery Cafe</span>,
+              a cafe & lounge in Karachi, live in production.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#work" className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
@@ -362,10 +377,10 @@ export default function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-transparent" />
             </div>
             <div className="glass absolute -bottom-5 -left-5 flex items-center gap-3 px-4 py-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-amber-500"><Coffee className="h-5 w-5 text-black" /></span>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-amber-500"><Code2 className="h-5 w-5 text-black" /></span>
               <div>
-                <p className="text-sm font-bold">Founder & CEO</p>
-                <p className="text-xs text-zinc-400">Shery Cafe, Karachi</p>
+                <p className="text-sm font-bold">Full Stack Developer</p>
+                <p className="text-xs text-zinc-400">Karachi, Pakistan</p>
               </div>
             </div>
           </motion.div>
@@ -381,7 +396,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "1", l: "Business Founded" },
+            { n: "7", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
@@ -401,7 +416,7 @@ export default function Portfolio() {
             a software engineer turned data scientist based in Karachi, Pakistan. My journey
             started with a BS in Software Engineering, and today I&apos;m pursuing a{" "}
             <span className="font-semibold text-amber-400">Post Graduate Diploma in Data Science</span>{" "}
-            at NED University — while running my own business.
+            at NED University — while shipping real products to production.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
             I love building things end-to-end: from Python machine learning models and Power BI
