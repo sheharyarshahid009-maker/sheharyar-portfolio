@@ -214,6 +214,22 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "ClinicScope — Complete Clinic Management System",
+    tagline: "Full clinic operations suite with 13 modules — live in production",
+    link: "https://clinic-scope-livid.vercel.app",
+    linkLabel: "Try Live Demo",
+    badge: "Full Stack SaaS",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    features: [
+      "Patients, doctors & appointments with auto token queue",
+      "Digital prescriptions, billing & charity discount categories",
+      "Pharmacy stock with low-stock & expiry alerts",
+      "Lab tests, medical certificates & follow-up reminders",
+      "Expense tracking, staff records & profit analytics",
+      "Printable slips, receipts, reports & schedules",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -412,7 +428,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "8", l: "Live Projects" },
+            { n: "9", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
