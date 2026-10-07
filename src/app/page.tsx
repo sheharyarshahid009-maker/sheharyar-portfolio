@@ -230,6 +230,22 @@ const PROJECTS = [
       "Printable slips, receipts, reports & schedules",
     ],
   },
+  {
+    title: "Shery Sasta Store — Daraz-Style Marketplace",
+    tagline: "Complete e-commerce marketplace with 19 premium features — live in production",
+    link: "https://shery-sasta-store.vercel.app",
+    linkLabel: "Try Live Demo",
+    badge: "Full Stack SaaS",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    features: [
+      "30 products across 8 categories — Mobiles, Laptops, Electronics & more",
+      "Agent system with commission tracking & public agent signup",
+      "Product variants (sizes/colors), brands, gift wrap & loyalty points",
+      "Flash sale, coupons, wishlist, banner slider & bulk CSV import",
+      "City-wise delivery zones, return management & email alerts",
+      "Admin dashboard with profit/loss analytics & printable invoices",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -428,7 +444,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "9", l: "Live Projects" },
+            { n: "10", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
@@ -499,7 +515,7 @@ export default function Portfolio() {
         <SectionHead kicker="Journey" title="Education" />
         <div className="relative ml-3 space-y-8 border-l-2 border-white/10 pl-8">
           {EDUCATION.map((e, i) => (
-            <motion.div key={e.title} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="relative">
+            <motion.div key={e.title} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="relative">
               <span className={`absolute -left-[41px] top-1 grid h-6 w-6 place-items-center rounded-full border-2 ${e.current ? "border-amber-400 bg-amber-400/20" : "border-zinc-700 bg-[#0a0a0f]"}`}>
                 {e.current && <span className="h-2 w-2 animate-pulse rounded-full bg-amber-400" />}
               </span>
