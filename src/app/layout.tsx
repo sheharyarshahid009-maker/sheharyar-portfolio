@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Engineer Muhammad Shehryar Khan — Portfolio",
+  title: "Engineer Muhammad Sheharyar Khan — Portfolio",
   description:
     "Full Stack Developer, Data Scientist & Founder of Shery Cafe. Python, Machine Learning, Power BI, Next.js.",
 };
@@ -21,3 +21,4 @@ export default function RootLayout({
     </html>
   );
 }
+
