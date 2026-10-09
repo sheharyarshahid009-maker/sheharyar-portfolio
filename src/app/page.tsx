@@ -262,6 +262,22 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "AgentScope AI — Autonomous Agent",
+    tagline: "AI agent with 7 real tools: web search, weather, math & more — live in production",
+    link: "https://agentscope-ai-3zpiiezyt4y83juvhvlljg.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / Agent",
+    stack: ["Python", "Groq", "Llama", "DuckDuckGo", "Streamlit"],
+    features: [
+      "Autonomous agent loop — decides which tool to use on its own",
+      "7 real tools: web search, live weather, calculator, currency, notes",
+      "Image vision analysis & voice replies",
+      "Streaming answers with visible agent thinking",
+      "Multi-chat sessions, 3 AI models & auto fallback",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -286,7 +302,7 @@ const SOCIALS = [
   { icon: GithubIcon, href: "https://github.com/sheharyarshahid009", label: "GitHub" },
   { icon: InstagramIcon, href: "https://instagram.com/sherrry_10", label: "Instagram" },
   { icon: XIcon, href: "https://twitter.com/sherrry_10", label: "X (Twitter)" },
-  { icon: FacebookIcon, href: "https://facebook.com/muhammadshehryarkhan", label: "Facebook" },
+  { icon: FacebookIcon, href: "https://facebook.com/muhammadSheharyarkhan", label: "Facebook" },
 ];
 
 const NAV = [
@@ -398,7 +414,7 @@ export default function Portfolio() {
             </p>
             <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
               Hi, I&apos;m <br />
-              <span className="gold-text">Muhammad Shehryar Khan</span>
+              <span className="gold-text">Muhammad Sheharyar Khan</span>
             </h1>
             <p className="mt-4 h-8 text-xl font-semibold text-zinc-300">
               {typed}<span className="cursor-blink text-amber-400">|</span>
@@ -437,7 +453,7 @@ export default function Portfolio() {
           >
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-amber-500/30 via-transparent to-amber-500/10 blur-2xl" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-amber-500/30">
-              <Image src="/profile.jpg" alt="Engineer Muhammad Shehryar Khan" fill className="object-cover" priority sizes="400px" />
+              <Image src="/profile.jpg" alt="Engineer Muhammad Sheharyar Khan" fill className="object-cover" priority sizes="400px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-transparent" />
             </div>
             <div className="glass absolute -bottom-5 -left-5 flex items-center gap-3 px-4 py-3">
@@ -460,7 +476,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "11", l: "Live Projects" },
+            { n: "12", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
@@ -476,7 +492,7 @@ export default function Portfolio() {
         <SectionHead kicker="About Me" title="Engineer, Developer & Entrepreneur" />
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass mx-auto max-w-3xl p-8 sm:p-10">
           <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-            I&apos;m <span className="font-bold text-white">Engineer Muhammad Shehryar Khan</span>,
+            I&apos;m <span className="font-bold text-white">Engineer Muhammad Sheharyar Khan</span>,
             a software engineer turned data scientist based in Karachi, Pakistan. My journey
             started with a BS in Software Engineering, and today I&apos;m pursuing a{" "}
             <span className="font-semibold text-amber-400">Post Graduate Diploma in Data Science</span>{" "}
@@ -654,9 +670,10 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-8 text-center">
-        <p className="text-sm text-zinc-500">© {new Date().getFullYear()} <span className="font-bold text-zinc-300">Engineer Muhammad Shehryar Khan</span></p>
+        <p className="text-sm text-zinc-500">© {new Date().getFullYear()} <span className="font-bold text-zinc-300">Engineer Muhammad Sheharyar Khan</span></p>
         <p className="mt-1 text-xs text-zinc-600">Built with Next.js, TypeScript & Tailwind CSS</p>
       </footer>
     </div>
   );
 }
+
