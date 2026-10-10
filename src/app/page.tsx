@@ -278,6 +278,22 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "RxScope AI — Prescription Reader",
+    tagline: "AI that reads doctors' handwriting into digital text — live in production",
+    link: "https://rxscope-ai-hedwsnt5n766naq63u2xk8.streamlit.app/",
+    linkLabel: "Try Live Demo",
+    badge: "AI / Vision",
+    stack: ["Python", "Groq", "Qwen 3.8 Vision", "Streamlit"],
+    features: [
+      "Vision AI transcribes handwritten prescriptions line by line",
+      "Detects 60+ Pakistani medicines with smart highlighting",
+      "Parses dosages & timing (1+1+1, mg, subah/shaam, SOS)",
+      "Live mobile camera capture + gallery upload",
+      "Scan history, stats dashboard & one-click text download",
+      "Deployed live on Streamlit Cloud",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -476,7 +492,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "12", l: "Live Projects" },
+            { n: "13", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
@@ -676,4 +692,3 @@ export default function Portfolio() {
     </div>
   );
 }
-
