@@ -91,7 +91,19 @@ const EDUCATION = [
   },
 ];
 
-const PROJECTS = [
+type Project = {
+  title: string;
+  tagline: string;
+  link: string;
+  linkLabel: string;
+  link2?: string;
+  link2Label?: string;
+  badge: string;
+  stack: string[];
+  features: string[];
+};
+
+const PROJECTS: Project[] = [
   {
     title: "Shery Cafe — Website & Business Platform",
     tagline: "Full stack cafe & lounge platform — live in production",
@@ -294,6 +306,24 @@ const PROJECTS = [
       "Deployed live on Streamlit Cloud",
     ],
   },
+  {
+    title: "Tuition Academy — Management System",
+    tagline: "Complete academy suite with parent portal & WhatsApp alerts — live in production",
+    link: "https://tuition-academy-3499.vercel.app",
+    linkLabel: "Try Live Demo",
+    link2: "https://tuition-academy-3499.vercel.app/parent/login",
+    link2Label: "Parent Portal",
+    badge: "Full Stack SaaS",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    features: [
+      "13 modules: batches, students, fees, attendance, tests & marks, teachers, timetable, inquiries, homework, notices, expenses",
+      "Fee vouchers with percentage discounts, defaulter tracking & one-click WhatsApp fee reminders",
+      "Test marks with live percentages & grades, attendance register, weekly timetable",
+      "Parent Portal — separate phone-number login showing results, attendance, fees & homework",
+      "Inquiry pipeline (New → Contacted → Admitted), printable reports, wall notices & expense tracking",
+      "Deployed live on Vercel with Neon PostgreSQL",
+    ],
+  },
 ];
 
 const POSTS = [
@@ -492,7 +522,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "13", l: "Live Projects" },
+            { n: "14", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
@@ -597,11 +627,18 @@ export default function Portfolio() {
                         <span key={t} className="rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">{t}</span>
                       ))}
                     </div>
-                    {project.link && (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
-                        {project.linkLabel} <ExternalLink className="h-4 w-4" />
-                      </a>
-                    )}
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
+                          {project.linkLabel} <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.link2 && (
+                        <a href={project.link2} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-amber-500/50 px-6 py-3 text-sm font-bold text-amber-400 transition hover:bg-amber-500/10">
+                          {project.link2Label} <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   <div className="p-8 sm:p-10">
                     <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">What I built</p>
