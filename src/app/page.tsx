@@ -47,6 +47,7 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
 
 const ROLES = [
   "Full Stack Developer",
+  "Co-Founder — Zamyrix",
   "Data Scientist",
   "Machine Learning Engineer",
 ];
@@ -104,6 +105,85 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+  {
+    title: "PBCF — Pakistan Business Club Forum",
+    tagline: "Official website & admin dashboard for a national business forum — live in production",
+    link: "https://pbcf-livid.vercel.app",
+    linkLabel: "Visit Live Site",
+    badge: "Client Project",
+    stack: ["Next.js", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+    features: [
+      "Premium navy & gold website for the Pakistan Business Club Forum",
+      "Nation's Leader Award (NLA 6) showcase with admin-managed sponsorship packages",
+      "Ambassadors showcase with 180M+ combined social reach",
+      "Membership applications, appointments & messages — full admin dashboard",
+      "Events & news with multi-photo galleries, ID card generator & data backup",
+      "AI chatbot, WhatsApp integration & event popups",
+    ],
+  },
+  {
+    title: "Mardana Lounge — Salon Website & Management System",
+    tagline: "Premium salon platform with bookings & complete business management — live in production",
+    link: "https://mardana-lounge.vercel.app",
+    linkLabel: "Visit Live Site",
+    badge: "Client Project",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+    features: [
+      "Online booking with service & barber selection",
+      "Complete admin panel — bookings, services, staff & customers",
+      "Payment status tracking with printable bills & receipts",
+      "Stock & inventory management",
+      "Barber commission reports & business analytics",
+      "Premium black & gold design with service gallery",
+    ],
+  },
+  {
+    title: "Zewar by Maryam Mughal — Jewellery E-Commerce",
+    tagline: "Online jewellery store with order management & WhatsApp ordering — live in production",
+    link: "https://zewar-two.vercel.app",
+    linkLabel: "Visit Live Site",
+    badge: "Client Project",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+    features: [
+      "50+ products across 10 categories — Korean & Indian jewellery",
+      "Cart, checkout & cash on delivery",
+      "Order code popup with printable order slip",
+      "Live order tracking for customers",
+      "Coupon & discount system managed from admin",
+      "Every order arrives instantly on WhatsApp",
+    ],
+  },
+  {
+    title: "BillScope — Construction RA Billing Software",
+    tagline: "Running-account billing system for construction projects — live in production",
+    link: "https://billscope.vercel.app",
+    linkLabel: "Visit Live Site",
+    badge: "Business Software",
+    stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    features: [
+      "Built for a real client — AFROZ Mobile Mall construction project",
+      "Measurements with per-floor covered-area limits",
+      "Abstract of Cost & Cost Analysis with old + new rate breakup",
+      "Bills carry previous quantities forward automatically",
+      "Totals verified exactly against the client's Excel workbook",
+      "Print-ready bill summaries & editable rate settings",
+    ],
+  },
+  {
+    title: "Zamyrix — Software Company",
+    tagline: "Co-founded software company — ML, AI agents, websites & business systems",
+    link: "https://zamyrix-olj8.vercel.app",
+    linkLabel: "Visit Live Site",
+    badge: "My Company",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    features: [
+      "Co-founded with two fellow engineers — INTELLIGENCE. INNOVATION. IMPACT.",
+      "Services: Machine Learning, Deep Learning, software, websites & AI agents",
+      "Premium black & royal blue company website",
+      "Real client projects delivered — Mardana Lounge, PBCF & more",
+      "Products showcase with 12+ live products",
+    ],
+  },
   {
     title: "Shery Cafe — Website & Business Platform",
     tagline: "Full stack cafe & lounge platform — live in production",
@@ -345,7 +425,7 @@ const POSTS = [
 ];
 
 const SOCIALS = [
-  { icon: GithubIcon, href: "https://github.com/sheharyarshahid009", label: "GitHub" },
+  { icon: GithubIcon, href: "https://github.com/sheharyarshahid009-maker", label: "GitHub" },
   { icon: InstagramIcon, href: "https://instagram.com/sherrry_10", label: "Instagram" },
   { icon: XIcon, href: "https://twitter.com/sherrry_10", label: "X (Twitter)" },
   { icon: FacebookIcon, href: "https://facebook.com/muhammadSheharyarkhan", label: "Facebook" },
@@ -467,9 +547,10 @@ export default function Portfolio() {
             </p>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-zinc-400 sm:text-base">
               Engineer by degree, builder by passion. I craft full stack web apps,
-              machine learning models and data dashboards — including the complete
-              digital platform for <span className="font-semibold text-zinc-200">Shery Cafe</span>,
-              a cafe & lounge in Karachi, live in production.
+              machine learning models and data dashboards — and through my company{" "}
+              <span className="font-semibold text-zinc-200">Zamyrix</span>, I build live
+              platforms for real clients: a national business forum, a premium salon
+              and a jewellery store, all in production.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#work" className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400">
@@ -522,7 +603,7 @@ export default function Portfolio() {
           {[
             { n: "6+", l: "Core Skills" },
             { n: "4", l: "Degrees & Diplomas" },
-            { n: "14", l: "Live Projects" },
+            { n: "19", l: "Live Projects" },
             { n: "15+", l: "Site Features Shipped" },
           ].map((s, i) => (
             <motion.div key={s.l} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
@@ -546,10 +627,10 @@ export default function Portfolio() {
           </p>
           <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
             I love building things end-to-end: from Python machine learning models and Power BI
-            dashboards to full stack web apps with Next.js and TypeScript. My proudest build so far
-            is the complete digital platform for{" "}
-            <span className="font-semibold text-zinc-200">Shery Cafe</span> — menu, ordering,
-            reservations, loyalty, analytics and more, all live in production.
+            dashboards to full stack web apps with Next.js and TypeScript. I co-founded{" "}
+            <span className="font-semibold text-zinc-200">Zamyrix</span>, a software company,
+            and have delivered live platforms for real clients — the Pakistan Business Club Forum,
+            Mardana Lounge salon, a jewellery e-commerce store and construction billing software.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {["Karachi, Pakistan", "Open to Work", "English / Urdu"].map((t) => (
@@ -680,7 +761,7 @@ export default function Portfolio() {
             {[
               { icon: Phone, label: "Phone", value: "03396030012", href: "tel:03396030012" },
               { icon: MapPin, label: "Location", value: "Defence Phase II, Karachi, Pakistan", href: undefined },
-              { icon: Mail, label: "GitHub", value: "github.com/sheharyarshahid009", href: "https://github.com/sheharyarshahid009" },
+              { icon: Mail, label: "GitHub", value: "github.com/sheharyarshahid009-maker", href: "https://github.com/sheharyarshahid009-maker" },
             ].map((c) => {
               const Icon = c.icon;
               const inner = (
